@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://очки_сжато.png" type="Texture" id=1]
+[ext_resource path="res://glasses.gd" type="Script" id=2]
+[ext_resource path="res://очки_подсветка.png" type="Texture" id=3]
+[ext_resource path="res://sound/Берем очки.wav" type="AudioStream" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 50.8137, 37.1006 )
+
+[node name="glasses" type="Area2D"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 585.05, 352.556 )
+frames = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 580.05, 356.96 )
+shape = SubResource( 2 )
+
+[node name="glassesSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+[connection signal="input_event" from="." to="." method="_on_glasses_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_glasses_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_glasses_mouse_exited"]

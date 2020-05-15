@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://травы2.png" type="Texture" id=1]
+[ext_resource path="res://gras.gd" type="Script" id=2]
+[ext_resource path="res://травы2_подсветка.png" type="Texture" id=3]
+[ext_resource path="res://sound/Берем траву.wav" type="AudioStream" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 149.017
+height = 0.745789
+
+[node name="gras" type="Area2D"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 325.457, 405.082 )
+frames = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 318.431, 400.16 )
+rotation = 1.5708
+shape = SubResource( 2 )
+
+[node name="grasSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+[connection signal="input_event" from="." to="." method="_on_gras_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_gras_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_gras_mouse_exited"]

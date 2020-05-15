@@ -1,0 +1,226 @@
+[gd_scene load_steps=37 format=2]
+
+[ext_resource path="res://gras.tscn" type="PackedScene" id=1]
+[ext_resource path="res://inv.tscn" type="PackedScene" id=2]
+[ext_resource path="res://delete.tscn" type="PackedScene" id=3]
+[ext_resource path="res://knife.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Cloath.tscn" type="PackedScene" id=5]
+[ext_resource path="res://стол2_сжато.png" type="Texture" id=6]
+[ext_resource path="res://Background_image2.png" type="Texture" id=7]
+[ext_resource path="res://glasses.tscn" type="PackedScene" id=8]
+[ext_resource path="res://стол1_сжато.png" type="Texture" id=9]
+[ext_resource path="res://Peasant.tscn" type="PackedScene" id=10]
+[ext_resource path="res://main.gd" type="Script" id=11]
+[ext_resource path="res://Onion.tscn" type="PackedScene" id=12]
+[ext_resource path="res://salt.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Clock.tscn" type="PackedScene" id=14]
+[ext_resource path="res://eggs.tscn" type="PackedScene" id=15]
+[ext_resource path="res://skipidar.tscn" type="PackedScene" id=16]
+[ext_resource path="res://chain.tscn" type="PackedScene" id=17]
+[ext_resource path="res://sound/start/Knocking.wav" type="AudioStream" id=19]
+[ext_resource path="res://sound/start/GoodMorning.wav" type="AudioStream" id=20]
+[ext_resource path="res://img/start/blinking3.7.png" type="Texture" id=21]
+[ext_resource path="res://img/start/blinking3.5.png" type="Texture" id=22]
+[ext_resource path="res://img/start/blinking2.5.png" type="Texture" id=23]
+[ext_resource path="res://img/start/blinking4.png" type="Texture" id=24]
+[ext_resource path="res://img/start/blinking5.png" type="Texture" id=25]
+[ext_resource path="res://img/start/blinking3.9.png" type="Texture" id=26]
+[ext_resource path="res://img/start/blinking1.png" type="Texture" id=27]
+[ext_resource path="res://img/start/blinking4.5.png" type="Texture" id=28]
+[ext_resource path="res://img/start/blinking3.png" type="Texture" id=29]
+[ext_resource path="res://img/start/blinking2.png" type="Texture" id=30]
+[ext_resource path="res://RichTextLabel.gd" type="Script" id=31]
+[ext_resource path="res://img/Предметы(фин)/книги.png" type="Texture" id=32]
+[ext_resource path="res://Glossary.tscn" type="PackedScene" id=33]
+[ext_resource path="res://img/Предметы(фин)/книги_пс.png" type="Texture" id=34]
+[ext_resource path="res://sound/На открытие глоссария.wav" type="AudioStream" id=35]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 27 ), ExtResource( 30 ), ExtResource( 23 ), ExtResource( 29 ), ExtResource( 23 ), ExtResource( 30 ), ExtResource( 27 ), ExtResource( 30 ), ExtResource( 23 ), ExtResource( 22 ), ExtResource( 21 ), ExtResource( 26 ), ExtResource( 24 ), ExtResource( 28 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=2]
+resource_name = "frame"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 6.5, 6.6, 6.7, 6.8, 6.9, 7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 0, 1, 2, 3, 4, 5, 6, 6, 7, 8, 9, 10, 14 ]
+}
+
+[node name="main" type="Node2D"]
+script = ExtResource( 11 )
+Peasant = ExtResource( 10 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 639.403, 459.507 )
+scale = Vector2( 0.504444, 0.504444 )
+texture = ExtResource( 7 )
+
+[node name="стол1_сжато" type="Sprite" parent="."]
+position = Vector2( 739.737, 530.422 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 9 )
+
+[node name="стол2_сжато" type="Sprite" parent="."]
+position = Vector2( 1142.73, 632.937 )
+scale = Vector2( 0.452557, 0.509726 )
+texture = ExtResource( 6 )
+
+[node name="delete" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1192.01, 741.531 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="gras" parent="." instance=ExtResource( 1 )]
+position = Vector2( 14.813, 96.3944 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="glasses" parent="." instance=ExtResource( 8 )]
+position = Vector2( 422.671, 273.709 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Cloath" parent="." instance=ExtResource( 5 )]
+position = Vector2( 153.722, 165.966 )
+
+[node name="Knife" parent="." instance=ExtResource( 4 )]
+position = Vector2( 839.414, 462.897 )
+rotation = -0.349066
+scale = Vector2( 0.5, 0.5 )
+
+[node name="eggs" parent="." instance=ExtResource( 15 )]
+position = Vector2( 741.508, 578.325 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Onion" parent="." instance=ExtResource( 12 )]
+position = Vector2( 1201.72, 581.062 )
+scale = Vector2( 0.7, 0.7 )
+
+[node name="salt" parent="." instance=ExtResource( 13 )]
+position = Vector2( 771.833, 420.3 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="skipidar" parent="." instance=ExtResource( 16 )]
+position = Vector2( 958.449, 561.996 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="chain" parent="." instance=ExtResource( 17 )]
+position = Vector2( 907.13, 340.389 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Clock" parent="." instance=ExtResource( 14 )]
+position = Vector2( 914.953, 830.542 )
+scale = Vector2( 0.553828, 0.517653 )
+
+[node name="ButtonGlossary" type="TextureButton" parent="."]
+margin_left = 774.263
+margin_top = 163.211
+margin_right = 1324.26
+margin_bottom = 493.211
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 32 )
+texture_pressed = ExtResource( 32 )
+texture_hover = ExtResource( 34 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="buttonBookSound" type="AudioStreamPlayer2D" parent="ButtonGlossary"]
+stream = ExtResource( 35 )
+
+[node name="SpawnPosition" type="Position2D" parent="."]
+position = Vector2( 68.116, 654.941 )
+
+[node name="TutorialPosition" type="Position2D" parent="."]
+position = Vector2( 51.9026, 561.48 )
+
+[node name="inv" parent="." instance=ExtResource( 2 )]
+position = Vector2( 394.923, 711.671 )
+
+[node name="GoodMorningKnock" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 19 )
+autoplay = true
+
+[node name="GoodMorningBlalbla" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 20 )
+autoplay = true
+
+[node name="AnimatedBlinking" type="AnimatedSprite" parent="."]
+position = Vector2( 639.681, 454.15 )
+scale = Vector2( 1.00459, 1 )
+frames = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedBlinking"]
+autoplay = "frame"
+anims/frame = SubResource( 2 )
+
+[node name="deathTimer" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="nextPatientTimer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[node name="endTimer" type="Timer" parent="."]
+wait_time = 3.5
+one_shot = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 22.0
+margin_top = 758.0
+margin_right = 199.0
+margin_bottom = 819.0
+rect_scale = Vector2( 2.5, 2.5 )
+script = ExtResource( 31 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tutTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="ShowPosition" type="Position2D" parent="."]
+position = Vector2( 731.518, 518.319 )
+
+[node name="Glossary" parent="." instance=ExtResource( 33 )]
+visible = false
+position = Vector2( 168.421, 78.9473 )
+scale = Vector2( 0.4, 0.4 )
+[connection signal="printText" from="." to="RichTextLabel" method="_on_main_printText"]
+[connection signal="printTutText" from="." to="RichTextLabel" method="_on_main_printTutText"]
+[connection signal="delete" from="delete" to="inv" method="_on_delete_delete"]
+[connection signal="input_event" from="delete" to="." method="_on_delete_input_event"]
+[connection signal="gras" from="gras" to="inv" method="_on_gras_gras"]
+[connection signal="glasses" from="glasses" to="inv" method="_on_glasses_glasses"]
+[connection signal="input_event" from="glasses" to="." method="_on_glasses_input_event"]
+[connection signal="cloath" from="Cloath" to="inv" method="_on_Cloath_cloath"]
+[connection signal="knife" from="Knife" to="inv" method="_on_Knife_knife"]
+[connection signal="eggs" from="eggs" to="inv" method="_on_eggs_eggs"]
+[connection signal="onion" from="Onion" to="inv" method="_on_Onion_onion"]
+[connection signal="salt" from="salt" to="inv" method="_on_salt_salt"]
+[connection signal="skipidar" from="skipidar" to="inv" method="_on_skipidar_skipidar"]
+[connection signal="chain" from="chain" to="inv" method="_on_chain_chain"]
+[connection signal="pressed" from="ButtonGlossary" to="Glossary" method="_on_ButtonGlossary_pressed"]
+[connection signal="pressed" from="ButtonGlossary" to="." method="_on_ButtonGlossary_pressed"]
+[connection signal="timeout" from="deathTimer" to="." method="_on_deathTimer_timeout"]
+[connection signal="timeout" from="nextPatientTimer" to="." method="_on_nextPatientTimer_timeout"]
+[connection signal="timeout" from="endTimer" to="." method="_on_endTimer_timeout"]
+[connection signal="timeout" from="tutTimer" to="." method="_on_tutTimer_timeout"]
+[connection signal="hide" from="Glossary" to="." method="_on_Glossary_hide"]
+[connection signal="press" from="Glossary" to="." method="_on_Glossary_press"]
+[connection signal="pressed" from="Glossary/Popup/Sprite/yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="Glossary/Popup/Sprite/no" to="." method="_on_no_pressed"]
+
+[editable path="inv"]
+
+[editable path="Glossary"]

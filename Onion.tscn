@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://лук в тарелке.png" type="Texture" id=1]
+[ext_resource path="res://Onion.gd" type="Script" id=2]
+[ext_resource path="res://лук в тарелке_подсветка.png" type="Texture" id=3]
+[ext_resource path="res://sound/Собрать и выкинуть предмет1.wav" type="AudioStream" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 74.3696, 59.2436 )
+
+[node name="Onion" type="Area2D"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="onionSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 5.31004, 2.10678 )
+frames = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.8983, -2.93523 )
+shape = SubResource( 2 )
+
+[node name="onionSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+[connection signal="input_event" from="." to="." method="_on_Onion_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_Onion_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_Onion_mouse_exited"]

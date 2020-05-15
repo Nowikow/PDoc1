@@ -1,0 +1,90 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://img/Интерфейс/kniga/книга_без закладок.png" type="Texture" id=1]
+[ext_resource path="res://sound/start/hover_button_sound.wav" type="AudioStream" id=2]
+[ext_resource path="res://Prologue.gd" type="Script" id=3]
+[ext_resource path="res://img/Интерфейс/Reconstruction-of-farmstead-I-in-the-deserted-medieval-village-of-Sloupek-Source-Vaeka.png" type="Texture" id=4]
+[ext_resource path="res://sound/Клик в меню.wav" type="AudioStream" id=5]
+[ext_resource path="res://img/Интерфейс/продолжить_текст.png" type="Texture" id=6]
+[ext_resource path="res://img/Интерфейс/продолжить_текст_пс.png" type="Texture" id=7]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "pages",
+"speed": 5.0
+} ]
+
+[node name="Prologue" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 900.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.534, 0.534 )
+frames = SubResource( 1 )
+animation = "pages"
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="AnimatedSprite"]
+position = Vector2( 690.24, 454.815 )
+scale = Vector2( 1.03974, 1.03974 )
+texture = ExtResource( 4 )
+
+[node name="OurHero" type="RichTextLabel" parent="."]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 130.505
+margin_top = 490.157
+margin_right = 372.505
+margin_bottom = 583.157
+rect_scale = Vector2( 2, 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Our hero was trying to break into a house on the outskirts of the village, which happened to be the doctor's house. Unfortunately, peasants saw him, but he was able to convince them that he is in fact a new doctor."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="New doctor" type="RichTextLabel" parent="."]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 240.939
+margin_top = 413.382
+margin_right = 325.939
+margin_bottom = 434.382
+rect_scale = Vector2( 3, 3 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "New doctor"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 513.453
+margin_top = 328.314
+margin_right = 1643.45
+margin_bottom = 558.314
+rect_scale = Vector2( 0.7, 0.7 )
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonHovered" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+
+[node name="ButtonPressed" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+[connection signal="mouse_entered" from="TextureButton" to="." method="_on_TextureButton_mouse_entered"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]

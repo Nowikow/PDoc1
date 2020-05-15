@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://полотенце1_сжато.png" type="Texture" id=1]
+[ext_resource path="res://Cloath.gd" type="Script" id=2]
+[ext_resource path="res://полотенце1_подсветка.png" type="Texture" id=3]
+[ext_resource path="res://sound/Собрать и выкинуть предмет3.wav" type="AudioStream" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 69.8572, 57.1549 )
+
+[node name="Cloath" type="Area2D"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 440.143, 318.049 )
+scale = Vector2( 0.7, 0.7 )
+frames = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 438.654, 314.647 )
+shape = SubResource( 2 )
+
+[node name="cloathSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+[connection signal="input_event" from="." to="." method="_on_Cloath_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_Cloath_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_Cloath_mouse_exited"]

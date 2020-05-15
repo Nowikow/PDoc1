@@ -1,0 +1,264 @@
+[gd_scene load_steps=34 format=2]
+
+[ext_resource path="res://полотенце1_сжато.png" type="Texture" id=1]
+[ext_resource path="res://img/Интерфейс/рука_правая_250.png" type="Texture" id=2]
+[ext_resource path="res://inv.gd" type="Script" id=3]
+[ext_resource path="res://img/Интерфейс/рука_левая_250.png" type="Texture" id=4]
+[ext_resource path="res://img/Интерфейс/правая_темно_250.png" type="Texture" id=5]
+[ext_resource path="res://img/Интерфейс/правая_светло_250.png" type="Texture" id=6]
+[ext_resource path="res://нарезанный лук.png" type="Texture" id=7]
+[ext_resource path="res://нарезанные травы.png" type="Texture" id=8]
+[ext_resource path="res://собранные травы.png" type="Texture" id=9]
+[ext_resource path="res://очки_сжато.png" type="Texture" id=10]
+[ext_resource path="res://лук с солью.png" type="Texture" id=11]
+[ext_resource path="res://бинты_сжато.png" type="Texture" id=12]
+[ext_resource path="res://солонка_пс.png" type="Texture" id=13]
+[ext_resource path="res://img/Интерфейс/левая_темно_250.png" type="Texture" id=14]
+[ext_resource path="res://img/Интерфейс/левая_светло_250.png" type="Texture" id=15]
+[ext_resource path="res://луковицы.png" type="Texture" id=16]
+[ext_resource path="res://солонка.png" type="Texture" id=17]
+[ext_resource path="res://img/Предметы(фин)/яйца в тарелке.png" type="Texture" id=18]
+[ext_resource path="res://img/Предметы(фин)/желтки.png" type="Texture" id=19]
+[ext_resource path="res://бальзам1.png" type="Texture" id=20]
+[ext_resource path="res://бальзам1_пс.png" type="Texture" id=21]
+[ext_resource path="res://пила_пс.png" type="Texture" id=22]
+[ext_resource path="res://пила.png" type="Texture" id=23]
+[ext_resource path="res://измельченные травы_пс.png" type="Texture" id=24]
+[ext_resource path="res://измельченные травы.png" type="Texture" id=25]
+[ext_resource path="res://игла+игольница.png" type="Texture" id=26]
+[ext_resource path="res://игла+игольница_подсветка.png" type="Texture" id=27]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "empty",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "onionObjectKnife",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "saltObject",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 25 ), ExtResource( 24 ) ],
+"loop": true,
+"name": "grasObjectBowl",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "glassesObject",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "OnionSaltObject",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 19 ) ],
+"loop": true,
+"name": "eggObjectKnife",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 23 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "chainObject",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "cloathObject",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "cloathObjectKnife",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "skipObject",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "grasObjectKnife",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "onionObject",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ) ],
+"loop": true,
+"name": "eggObject",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "grasObject",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "igolkaObject",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 127.308, 126.261 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "empty",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "onionObjectKnife",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "saltObject",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 25 ), ExtResource( 24 ) ],
+"loop": true,
+"name": "grasObjectBowl",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "glassesObject",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "OnionSaltObject",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 19 ) ],
+"loop": true,
+"name": "eggObjectKnife",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 23 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "chainObject",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "cloathObject",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "cloathObjectKnife",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "skipObject",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "grasObjectKnife",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "onionObject",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ) ],
+"loop": true,
+"name": "eggObject",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "grasObject",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "igolkaObject",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 125.661, 126.183 )
+
+[node name="inv" type="Node2D"]
+position = Vector2( -0.513336, 0 )
+script = ExtResource( 3 )
+
+[node name="LH" type="Area2D" parent="."]
+scale = Vector2( 0.5, 0.5 )
+
+[node name="frameLH" type="AnimatedSprite" parent="LH"]
+position = Vector2( 360.76, 230.485 )
+frames = SubResource( 1 )
+
+[node name="Lefthand" type="AnimatedSprite" parent="LH"]
+position = Vector2( 350.6, 226.605 )
+scale = Vector2( 0.8, 0.8 )
+frames = SubResource( 2 )
+animation = "empty"
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LH"]
+position = Vector2( 363.699, 230.61 )
+shape = SubResource( 3 )
+
+[node name="RH" type="Area2D" parent="."]
+position = Vector2( -1.0267, 3.73082 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="frameRH" type="AnimatedSprite" parent="RH"]
+position = Vector2( 668.073, 223.805 )
+frames = SubResource( 4 )
+
+[node name="Righthand" type="AnimatedSprite" parent="RH"]
+position = Vector2( 674.748, 221.742 )
+scale = Vector2( 0.8, 0.8 )
+frames = SubResource( 5 )
+animation = "empty"
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RH"]
+position = Vector2( 669.32, 222.617 )
+shape = SubResource( 6 )
+[connection signal="input_event" from="LH" to="." method="_on_LH_input_event"]
+[connection signal="input_event" from="RH" to="." method="_on_RH_input_event"]

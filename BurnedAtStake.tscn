@@ -1,0 +1,99 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://sound/Клик в меню.wav" type="AudioStream" id=1]
+[ext_resource path="res://sound/start/hover_button_sound.wav" type="AudioStream" id=2]
+[ext_resource path="res://BurnedAtStake.gd" type="Script" id=3]
+[ext_resource path="res://img/Интерфейс/1798940.png" type="Texture" id=4]
+[ext_resource path="res://sound/campfire-1.wav" type="AudioStream" id=5]
+[ext_resource path="res://img/Интерфейс/kniga/книга_без закладок.png" type="Texture" id=6]
+[ext_resource path="res://img/Интерфейс/закладка4.5_меню.png" type="Texture" id=7]
+[ext_resource path="res://img/Интерфейс/закладка4.5_меню_пс.png" type="Texture" id=8]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "pages",
+"speed": 5.0
+} ]
+
+[node name="Death" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 900.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.534017, 0.534017 )
+frames = SubResource( 1 )
+animation = "pages"
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="AnimatedSprite"]
+position = Vector2( 264.906, 227.408 )
+rotation = 0.00523599
+scale = Vector2( 0.334235, 0.334235 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="ButtonHovered" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+
+[node name="ButtonPressed" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+
+[node name="BurnedAtStake" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
+
+[node name="YOU DIED" type="RichTextLabel" parent="."]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 277.72
+margin_top = 460.912
+margin_right = 343.72
+margin_bottom = 475.912
+rect_scale = Vector2( 2.5, 2.5 )
+focus_mode = 2
+text = "YOU DIED"
+selection_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 159.021
+margin_top = 546.786
+margin_right = 367.021
+margin_bottom = 581.786
+rect_scale = Vector2( 2, 2 )
+focus_mode = 2
+text = "You were compromised and condemned to burn at the stake"
+selection_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonHome" type="TextureButton" parent="."]
+margin_left = 749.581
+margin_top = -26.5162
+margin_right = 1033.58
+margin_bottom = 341.484
+rect_rotation = 0.9
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="mouse_entered" from="ButtonHome" to="." method="_on_ButtonHome_mouse_entered"]
+[connection signal="pressed" from="ButtonHome" to="." method="_on_TextureButton_pressed"]
